@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: right;
+        }
+
+        li a {
+            font-size: 40px;
+            display: block;
+            padding: 30px;
+            background-color: #dddddd;
+        }
+
+        ul {
+            background-color: #dddddd;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li style="float:left"><a href="https://chatgpt.com/">Home</a></li>
+        <li><a href="/index/">Contact</a></li>
+        <li><a href="https://www.google.com/search?q=gym+website&oq=gym&gs_lcrp=EgZjaHJvbWUqEAgBEAAYkQIYsQMYgAQYigUyFAgAEEUYORhDGLEDGMkDGIAEGIoFMhAIARAAGJECGLEDGIAEGIoFMg0IAhAAGJECGIAEGIoFMgwIAxAAGEMYgAQYigUyFQgEEC4YQxjHARixAxjRAxiABBiKBTIMCAUQABhDGIAEGIoFMgwIBhAAGEMYgAQYigUyDwgHEAAYQxixAxiABBiKBTINCAgQABiSAxiABBiKBTINCAkQABiSAxiABBiKBdIBCDMzNTFqMGo3qAIIsAIB8QXvMfP0xfpC5Q&sourceid=chrome&ie=UTF-8">About</a></li>
+    </ul>
+    <img src="{% static 'images/health-fitness-app1200.jpg' %}" alt="Image" width="1520" height="400">
+
+    <h1>EXERCISE</h1>
+
+
+    <table>
+
+        {% for author in authors %}
+            <tr>
+                <td> <a href="{% url 'author_detail' author.id %}">{{ author.name }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

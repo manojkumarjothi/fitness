@@ -1,0 +1,119 @@
+{% extends 'register.html' %}
+
+{% block welcome %}
+<title>LOGIN</title>
+{% endblock %}
+
+{% block go %}
+<h1>Login Page</h1>
+{% endblock %}
+
+{% block head %}
+<!-- Internal CSS specific for login page -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #007BFF;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form input, form button {
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+    }
+
+    form button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background-color: #0056b3;
+    }
+
+    .container a {
+        text-decoration: none;
+        color: #007BFF;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .container a:hover {
+        text-decoration: underline;
+    }
+
+    .hi h2 {
+        text-align: center;
+        font-size: 18px;
+        color: #333;
+    }
+
+    .hi button {
+        background-color: #FFC107;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        font-size: 16px;
+        margin-top: 15px;
+        display: block;
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hi button:hover {
+        background-color: #e0a800;
+    }
+
+    .hi a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    .hi a:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock %}
+
+{% block good %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
+
+{% block hi %}
+    <h2>New User?</h2>
+{% endblock %}
+
+{% block hello %}
+   <button><a href="/register/">Register</a></button>
+{% endblock %}
